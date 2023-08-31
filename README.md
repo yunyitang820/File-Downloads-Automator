@@ -8,4 +8,6 @@ Automate your Desktop File Management and declutter your Downloads Folder. This 
 
 ## My add in
 
-TBD
+1. to have my own categories for downloads;
+2. to have all downloads kept in the 'Download' folder, for my own file managment routine;
+3. TBD
