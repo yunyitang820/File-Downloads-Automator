@@ -8,7 +8,7 @@ import logging
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-# FILL IN BELOW folder to track 
+# filepath of folder to track 
 # e.g. Windows: "C:\\Users\\UserName\\Downloads"
 # e.g. Mac: "/Users/UserName/Downloads". Copy a folder’s pathname: Control-click the folder in the path bar, then choose Copy “folder” as Pathname.
 source_dir = "/Users/yunyitang/Downloads"
@@ -34,7 +34,7 @@ document_extensions = [".doc", ".docx", ".odt",
 def make_unique(dest, name):
     filename, extension = splitext(name)
     counter = 1
-    # * IF FILE EXISTS, ADDS NUMBER TO THE END OF THE FILENAME
+    # IF FILE EXISTS, ADDS NUMBER TO THE END OF THE FILENAME
     while exists(f"{dest}/{name}"):
         name = f"{filename}({str(counter)}){extension}"
         counter += 1
@@ -92,7 +92,7 @@ class MoverHandler(FileSystemEventHandler):
                 logging.info(f"Moved document file: {name}")
 
 
-# ! NO NEED TO CHANGE BELOW CODE
+# codes listening to the changes in the source_dir
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(message)s',

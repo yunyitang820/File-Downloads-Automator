@@ -10,7 +10,11 @@ Automate your Desktop File Management and declutter your Downloads Folder. This 
 
 1. to have my own categories for downloads;
 2. to have all downloads kept in the 'Download' folder, for my own file managment routine;
-3. if it is dmg, delete it;
-4. pdf file bigger than 1mb, to move to 'academic';
-5. created datetime earlier than 2 years ago, to move to 'under revision'
-6. TBD
+3. pdf file bigger than 1mb, to move to 'academic';
+
+# Features to add
+
+1. if it is .dmg or .ics, delete it;
+2. created datetime earlier than 2 years ago, to move to 'under revision';
+3. to sort existing downloads as well;
+TBD
