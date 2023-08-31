@@ -10,13 +10,13 @@ from watchdog.events import FileSystemEventHandler
 
 # FILL IN BELOW folder to track 
 # e.g. Windows: "C:\\Users\\UserName\\Downloads"
-# e.g. Mac: "/Users/UserName/Downloads"
+# e.g. Mac: "/Users/UserName/Downloads". Copy a folder’s pathname: Control-click the folder in the path bar, then choose Copy “folder” as Pathname.
 source_dir = "/Users/yunyitang/Downloads"
-dest_dir_music = ""
-dest_dir_video = ""
-dest_dir_image = ""
-dest_dir_documents = ""
-dest_dir_bibliography = ""
+dest_dir_music = "/Users/yunyitang/Downloads/music"
+dest_dir_video = "/Users/yunyitang/Downloads/video"
+dest_dir_image = "/Users/yunyitang/Downloads/image"
+dest_dir_documents = "/Users/yunyitang/Downloads/documents" # other than bibliography
+dest_dir_bibliography = "/Users/yunyitang/Downloads/bibliography"
 
 # supported image types
 image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi", ".png", ".gif", ".webp", ".tiff", ".tif", ".psd", ".raw", ".arw", ".cr2", ".nrw",
