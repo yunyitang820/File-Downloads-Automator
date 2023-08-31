@@ -16,6 +16,7 @@ dest_dir_music = ""
 dest_dir_video = ""
 dest_dir_image = ""
 dest_dir_documents = ""
+dest_dir_bibliography = ""
 
 # supported image types
 image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi", ".png", ".gif", ".webp", ".tiff", ".tif", ".psd", ".raw", ".arw", ".cr2", ".nrw",
@@ -83,7 +84,11 @@ class MoverHandler(FileSystemEventHandler):
     def check_document_files(self, entry, name):  # * Checks all Document Files
         for documents_extension in document_extensions:
             if name.endswith(documents_extension) or name.endswith(documents_extension.upper()):
-                move_file(dest_dir_documents, entry, name)
+                if entry.stat().st_size > 1_000_000 or "Final_Copy" in name:  # 1 Megabytes
+                    dest = dest_dir_bibliography
+                else:
+                    dest = dest_dir_documents
+                move_file(dest, entry, name)
                 logging.info(f"Moved document file: {name}")
 
 
