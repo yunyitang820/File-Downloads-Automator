@@ -34,7 +34,7 @@ document_extensions = [".doc", ".docx", ".odt",
 def make_unique(dest, name):
     filename, extension = splitext(name)
     counter = 1
-    # IF FILE EXISTS, ADDS NUMBER TO THE END OF THE FILENAME
+    # if file exists, adds number to the end of the filename
     while exists(f"{dest}/{name}"):
         name = f"{filename}({str(counter)}){extension}"
         counter += 1
@@ -52,8 +52,9 @@ def move_file(dest, entry, name):
 
 
 class MoverHandler(FileSystemEventHandler):
-    # ? THIS FUNCTION WILL RUN WHENEVER THERE IS A CHANGE IN "source_dir"
-    # ? .upper is for not missing out on files with uppercase extensions
+    # this function will run WHENEVER there is a change in the source_dir
+    # so for now it will only be triggered when w new file is downloaded
+    # .upper is for not missing out on files with uppercase extensions
     def on_modified(self, event):
         with scandir(source_dir) as entries:
             for entry in entries:

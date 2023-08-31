@@ -1,4 +1,4 @@
-# File-Downloads-Automator
+# File Downloads Automator
 
 ## Original intro
 
