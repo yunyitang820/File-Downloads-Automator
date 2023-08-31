@@ -14,7 +14,7 @@ Automate your Desktop File Management and declutter your Downloads Folder. This 
 
 ## Features to add
 
-1. if it is .dmg or .ics, delete it;
+1. delete documents .zip, .dmg and .ics;
 2. created datetime earlier than 2 years ago, to move to 'under revision';
 3. to sort existing downloads as well;
 4. TBD
