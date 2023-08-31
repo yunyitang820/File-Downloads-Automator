@@ -8,24 +8,24 @@ import logging
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-# ! FILL IN BELOW
-# ? folder to track e.g. Windows: "C:\\Users\\UserName\\Downloads"
-source_dir = ""
-dest_dir_sfx = ""
+# FILL IN BELOW folder to track 
+# e.g. Windows: "C:\\Users\\UserName\\Downloads"
+# e.g. Mac: "/Users/UserName/Downloads"
+source_dir = "/Users/yunyitang/Downloads"
 dest_dir_music = ""
 dest_dir_video = ""
 dest_dir_image = ""
 dest_dir_documents = ""
 
-# ? supported image types
+# supported image types
 image_extensions = [".jpg", ".jpeg", ".jpe", ".jif", ".jfif", ".jfi", ".png", ".gif", ".webp", ".tiff", ".tif", ".psd", ".raw", ".arw", ".cr2", ".nrw",
                     ".k25", ".bmp", ".dib", ".heif", ".heic", ".ind", ".indd", ".indt", ".jp2", ".j2k", ".jpf", ".jpf", ".jpx", ".jpm", ".mj2", ".svg", ".svgz", ".ai", ".eps", ".ico"]
-# ? supported Video types
+# supported video types
 video_extensions = [".webm", ".mpg", ".mp2", ".mpeg", ".mpe", ".mpv", ".ogg",
                     ".mp4", ".mp4v", ".m4v", ".avi", ".wmv", ".mov", ".qt", ".flv", ".swf", ".avchd"]
-# ? supported Audio types
+# supported audio types
 audio_extensions = [".m4a", ".flac", "mp3", ".wav", ".wma", ".aac"]
-# ? supported Document types
+# supported document types
 document_extensions = [".doc", ".docx", ".odt",
                        ".pdf", ".xls", ".xlsx", ".ppt", ".pptx"]
 
@@ -65,11 +65,7 @@ class MoverHandler(FileSystemEventHandler):
     def check_audio_files(self, entry, name):  # * Checks all Audio Files
         for audio_extension in audio_extensions:
             if name.endswith(audio_extension) or name.endswith(audio_extension.upper()):
-                if entry.stat().st_size < 10_000_000 or "SFX" in name:  # ? 10Megabytes
-                    dest = dest_dir_sfx
-                else:
-                    dest = dest_dir_music
-                move_file(dest, entry, name)
+                move_file(dest_dir_music, entry, name)
                 logging.info(f"Moved audio file: {name}")
 
     def check_video_files(self, entry, name):  # * Checks all Video Files
